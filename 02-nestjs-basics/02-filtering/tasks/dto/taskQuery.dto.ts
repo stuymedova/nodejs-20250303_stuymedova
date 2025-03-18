@@ -1,5 +1,5 @@
 import { TaskStatus } from "../task.model";
-import { IsEnum, IsInt, IsOptional, Min } from 'class-validator';
+import { IsEnum, IsIn, IsInt, IsOptional, Min } from 'class-validator';
 
 export class TaskQueryDto {
 	@IsOptional()
@@ -15,4 +15,8 @@ export class TaskQueryDto {
 	@IsInt()
 	@Min(1)
 	limit?: number;
+
+	@IsOptional()
+	@IsIn(['status', 'title'])
+	sortBy?: 'status' | 'title';
 }

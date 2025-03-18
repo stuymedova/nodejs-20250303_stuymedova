@@ -11,7 +11,8 @@ export class TasksController {
     return this.tasksService.getFilteredTasks(
       query.status,
       query.page,
-      query.limit
+      query.limit,
+      query.sortBy
     );
   }
 }
