@@ -1,6 +1,6 @@
 import { Controller, Get, Query } from "@nestjs/common";
 import { TasksService } from "./tasks.service";
-import type { TaskQueryDto } from "tasks/dto/taskQuery.dto";
+import type { TaskQueryDto } from "./dto/taskQuery.dto";
 
 @Controller("tasks")
 export class TasksController {
