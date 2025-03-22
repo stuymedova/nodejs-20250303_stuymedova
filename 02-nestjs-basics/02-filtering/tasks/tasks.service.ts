@@ -43,7 +43,7 @@ export class TasksService {
     sortBy?: 'title' | 'status'
   ): Task[] {
     if (page !== undefined && limit === undefined || page === undefined && limit !== undefined) {
-      throw new BadRequestException();
+      throw new BadRequestException('Invalid page or limit value. Both page and limit must be specified');
     }
     let tasks = this.tasks;
     if (status !== undefined) {
