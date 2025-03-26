@@ -1,6 +1,7 @@
-import { ArgumentsHost, ExceptionFilter, HttpException, HttpStatus } from "@nestjs/common";
+import { ArgumentsHost, ExceptionFilter, HttpException, HttpStatus, Injectable } from "@nestjs/common";
 import { appendFileSync } from "fs";
 
+@Injectable()
 export class HttpErrorFilter implements ExceptionFilter {
   catch(exception: HttpException | Error, host: ArgumentsHost) {
     const status = exception instanceof HttpException
