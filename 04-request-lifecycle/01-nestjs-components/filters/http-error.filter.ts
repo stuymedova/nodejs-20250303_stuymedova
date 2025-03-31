@@ -16,7 +16,7 @@ export class HttpErrorFilter implements ExceptionFilter {
     );
     host.switchToHttp().getResponse().status(status).json({
       statusCode: status,
-      message: exception.message,
+      message: response,
       timestamp: new Date().toISOString(),
     });
   }
